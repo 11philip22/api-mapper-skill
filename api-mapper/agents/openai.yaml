@@ -1,0 +1,7 @@
+interface:
+  display_name: "API Mapper"
+  short_description: "Reverse-engineer undocumented APIs"
+  default_prompt: "Use $api-mapper to reverse-engineer and document this website's API."
+ 
+policy:
+  allow_implicit_invocation: true
