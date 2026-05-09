@@ -2,10 +2,10 @@
 name: api-mapper
 description: >
   Reverse-engineer undocumented APIs using Chrome CDP and curl. Controls a real Chrome browser via
-  Node.js scripts to intercept traffic, reverse-engineer JS bundles, and produce markdown docs per
+  Python scripts to intercept traffic, reverse-engineer JS bundles, and produce markdown docs per
   domain area in docs/apis/. Output is designed as input for a client or SDK-building agent -- complete enough
   that no browser is ever needed again. Complex flows (multi-step sequences, computed values, JS-driven behaviour) are fully
-  extracted and documented with a runnable Node.js flow script in scripts/flows/. Use this skill
+  extracted and documented with a runnable Python flow script in scripts/flows/. Use this skill
   whenever the user wants to map, reverse-engineer, document, or explore the API of a website -- even
   phrased as "figure out how X works", "what endpoints does Y use", "sniff the API", "intercept
   requests", "document the backend", or "build an SDK for". Always use for any task involving CDP
@@ -25,7 +25,7 @@ for.
 
 ## Requirements
 
-- Node.js + npm
+- Python 3 + pip
 - Google Chrome (path must be known or discoverable)
 - curl (or curl.exe on Windows)
 
@@ -39,7 +39,7 @@ Produce a complete, reproducible map of the site's API:
   response shape
 - Every non-trivial flow (multi-step sequences, computed values, anything beyond a plain HTTP
   call) fully reverse-engineered: the logic extracted, annotated, and implemented as a standalone
-  Node.js script that runs without a browser
+  Python script that runs without a browser
 - Docs written so that someone who has never seen the site can implement a working client in
   any language from scratch using only the docs
 
@@ -47,7 +47,7 @@ Produce a complete, reproducible map of the site's API:
 
 ## Tools
 
-**Chrome CDP via Node.js** -- launch Chrome and intercept network traffic to observe what the site
+**Chrome CDP via Python** -- launch Chrome and intercept network traffic to observe what the site
 actually does. Read `references/cdp-capture.md` before writing any CDP scripts.
 
 Find the Chrome executable before writing any scripts -- read the relevant platform reference:
@@ -58,7 +58,7 @@ Find the Chrome executable before writing any scripts -- read the relevant platf
 | macOS | `references/chrome-macos.md` |
 | Linux | `references/chrome-linux.md` |
 
-Use the CDP protocol directly via raw WebSocket. Install any needed npm packages in the repo root.
+Use the CDP protocol directly via raw WebSocket. Install any needed Python packages in the repo root.
 
 **curl** -- probe endpoints directly once discovered. Write curl commands as shell scripts
 (.sh on macOS/Linux, .ps1 on Windows) in `artifacts/{timestamp}/probes/`. Never run throwaway
@@ -90,7 +90,7 @@ to continue.
 repo/
 ├── scripts/
 │   ├── flows/       <- end-to-end flow scripts, one per documented flow
-│   └── *.js         <- reusable helpers (auth wrappers, path extractors, etc.)
+│   └── *.py         <- reusable helpers (auth wrappers, path extractors, etc.)
 ├── artifacts/
 │   └── {timestamp}/ <- one folder per session
 │       ├── requests.ndjson     <- all intercepted XHR/Fetch requests, one JSON per line
@@ -109,8 +109,8 @@ seconds: `artifacts/2025-01-15T14-30-00/`.
 **Placement:** session output (captured requests, bundles, probes, analysis notes) goes in
 `artifacts/{timestamp}/`. Reusable scripts go in `scripts/`. Docs go in `docs/apis/`.
 
-**Node.js for all scripts except probes.** Probe scripts that invoke curl are .sh (macOS/Linux)
-or .ps1 (Windows) and live in `artifacts/{timestamp}/probes/`. Everything else is Node.js.
+**Python for all scripts except probes.** Probe scripts that invoke curl are .sh (macOS/Linux)
+or .ps1 (Windows) and live in `artifacts/{timestamp}/probes/`. Everything else is Python.
 
 **Write findings to docs continuously** -- don't batch everything to the end. Update `docs/apis/`
 whenever a new area is understood well enough to document.
@@ -132,9 +132,9 @@ script.
 
 ---
 
-## scripts/flows/{flow}.js
+## scripts/flows/{flow}.py
 
-One Node.js script per documented flow. Read `references/flow-script-template.md` before writing
+One Python script per documented flow. Read `references/flow-script-template.md` before writing
 any flow script. The script must run with no browser open.
 
 ---

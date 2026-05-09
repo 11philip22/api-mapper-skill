@@ -2,7 +2,7 @@
 
 > A skill for AI agents that reverse-engineers and documents undocumented APIs using Chrome CDP and curl.
 
-The agent controls a real Chrome browser via Node.js scripts over raw WebSocket CDP, intercepts all
+The agent controls a real Chrome browser via Python scripts over raw WebSocket CDP, intercepts all
 network traffic, analyses JS bundles, and produces reproducible markdown documentation -- complete
 enough that any client or SDK can be built from the docs alone, in any language, without ever
 opening a browser again.
@@ -13,11 +13,11 @@ opening a browser again.
 - Downloads and reverse-engineers JS bundles to extract computed fields, signatures, and hardcoded constants
 - Probes discovered endpoints with curl to map request/response shapes and auth requirements
 - Writes findings continuously to structured markdown docs, one file per API domain area
-- For complex flows, produces a standalone Node.js script that replays the full flow without a browser
+- For complex flows, produces a standalone Python script that replays the full flow without a browser
 
 ## Requirements
 
-- Node.js + npm
+- Python 3 + pip
 - Google Chrome installed (the agent will locate the executable)
 - curl (or `curl.exe` on Windows)
 
@@ -27,7 +27,7 @@ opening a browser again.
 repo/
 +-- scripts/
 |   +-- flows/       <- end-to-end flow scripts, one per documented flow
-|   +-- *.js         <- reusable helpers
+|   +-- *.py         <- reusable helpers
 +-- artifacts/
 |   +-- {timestamp}/ <- one folder per research session
 |       +-- requests.ndjson
@@ -78,9 +78,9 @@ throughout the research session. Each file documents endpoints, auth requirement
 shapes, and any flows that require client-side computation.
 
 For flows that involve computed values (signatures, token exchanges, custom encoding, etc.), the
-agent also produces a standalone Node.js script in `scripts/flows/` that executes the full flow
+agent also produces a standalone Python script in `scripts/flows/` that executes the full flow
 without a browser.
 
 > [!IMPORTANT]
 > Docs are written to be language-agnostic. The goal is that anyone -- or any agent building a
-> Python, Rust, Go, or Node.js client -- can implement the full API from the docs alone.
+> Python, Rust, Go, or JavaScript client -- can implement the full API from the docs alone.

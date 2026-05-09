@@ -108,12 +108,12 @@ List endpoints discovered but not yet fully probed:
 ### Flows
 
 > Add this section for any flow that warrants deeper documentation. Every flow listed here must
-> have a corresponding runnable script at `scripts/flows/{flow}.js`.
+> have a corresponding runnable script at `scripts/flows/{flow}.py`.
 
 #### {Flow Name}
 
 > This flow requires client-side logic. The steps below are complete -- no browser needed.
-> Runnable implementation: `scripts/flows/{flow}.js`
+> Runnable implementation: `scripts/flows/{flow}.py`
 
 **What it does:** Brief description.
 
@@ -151,12 +151,11 @@ Document every field that is not a plain user input or copied from a prior respo
 
 **Ported functions** (if any custom encoding/crypto was extracted):
 
-```js
-// Extracted verbatim from main.chunk.js line 8823
-// Custom base62 encoder used to encode the challenge response
-function base62encode(buf) {
-  // ...
-}
+```python
+# Ported from main.chunk.js line 8823
+# Custom base62 encoder used to encode the challenge response
+def base62_encode(buf):
+    ...
 ```
 
 **Success response:**

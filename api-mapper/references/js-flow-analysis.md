@@ -13,7 +13,7 @@ For each flow analysed, produce two things:
 explanation of what the flow does, what is being computed and why, and what a reimplementer
 needs to know. This should read as useful context, not just raw observations.
 
-**Flow script** at `scripts/flows/{flow}.js` -- a standalone Node.js script that executes the
+**Flow script** at `scripts/flows/{flow}.py` -- a standalone Python script that executes the
 full flow without a browser. See `references/flow-script-template.md`.
 
 ## What to look for in the JS

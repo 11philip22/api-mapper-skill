@@ -1,6 +1,6 @@
 # Flow Script Requirements
 
-Every documented flow gets a script at `scripts/flows/{flow-name}.js`.
+Every documented flow gets a script at `scripts/flows/{flow-name}.py`.
 
 ## What the script must contain
 
@@ -19,7 +19,7 @@ bundle must be included verbatim or faithfully ported, with a comment attributin
 **Full flow implementation** -- all HTTP calls in sequence, with state (tokens, session IDs, nonces)
 carried between steps exactly as the site's JS does it.
 
-**TLS/client fingerprint compatibility** -- if the site rejects plain Node.js HTTP clients or appears
+**TLS/client fingerprint compatibility** -- if the site rejects plain Python HTTP clients or appears
 to require a browser-like TLS/client fingerprint, use an appropriate TLS spoofing library for the
 flow script. Document which library is used, what browser/client fingerprint it emulates, and why it
 is required.
@@ -29,7 +29,7 @@ message on failure.
 
 ## The test
 
-`node scripts/flows/{flow}.js` must work from a clean terminal with no browser open.
+`python scripts/flows/{flow}.py` must work from a clean terminal with no browser open.
 
 ## Checklist before committing a flow script
 
