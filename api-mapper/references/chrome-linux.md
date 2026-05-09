@@ -1,4 +1,4 @@
-# Chrome Executable Path — Linux
+# Chrome Executable Path -- Linux
 
 ## Common install locations (try in order)
 

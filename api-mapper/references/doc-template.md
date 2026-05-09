@@ -2,7 +2,7 @@
 
 Use this template for each file in `docs/apis/{area}.md`. One file per domain area.
 
-Update the file incrementally as you discover more — do not wait until the end of a session.
+Update the file incrementally as you discover more -- do not wait until the end of a session.
 
 ---
 
@@ -30,7 +30,7 @@ Brief description of what this area of the API does and what flows it powers.
 |--------|-------|
 | Type | Bearer token / Cookie / None |
 | Header | `Authorization: Bearer <token>` |
-| How to obtain | POST /api/auth/login → `.token` field |
+| How to obtain | POST /api/auth/login -> `.token` field |
 
 ---
 
@@ -93,8 +93,8 @@ Brief description of what this area of the API does and what flows it powers.
 
 List endpoints discovered but not yet fully probed:
 
-- `GET /api/{path}/export` — discovered in JS bundle, not yet probed
-- `DELETE /api/{path}/{id}` — returns 403 with current auth level
+- `GET /api/{path}/export` -- discovered in JS bundle, not yet probed
+- `DELETE /api/{path}/{id}` -- returns 403 with current auth level
 
 ---
 
@@ -112,7 +112,7 @@ List endpoints discovered but not yet fully probed:
 
 #### {Flow Name}
 
-> This flow requires client-side logic. The steps below are complete — no browser needed.
+> This flow requires client-side logic. The steps below are complete -- no browser needed.
 > Runnable implementation: `scripts/flows/{flow}.js`
 
 **What it does:** Brief description.
@@ -129,14 +129,14 @@ List endpoints discovered but not yet fully probed:
 
 Document every field that is not a plain user input or copied from a prior response:
 
-    Step 2 — body.sig
+    Step 2 -- body.sig
       Algorithm: HMAC-SHA256
       Input:     clientId + ":" + timestamp  (clientId from step 1, timestamp = Date.now())
-      Key:       CLIENT_SECRET (hardcoded in bundle — see below)
+      Key:       CLIENT_SECRET (hardcoded in bundle -- see below)
       Encoding:  hex lowercase
       Pseudocode: hmac_sha256(key=CLIENT_SECRET, msg=clientId + ":" + timestamp), hex-encoded
 
-    Step 3 — body.passwordHash
+    Step 3 -- body.passwordHash
       Algorithm: SHA-256
       Input:     plaintext password
       Encoding:  hex lowercase
@@ -176,7 +176,7 @@ function base62encode(buf) {
 
 ## docs/apis/README.md Template
 
-### API Map — {Site Name}
+### API Map -- {Site Name}
 
 > Target: https://target.com
 > Mapping started: {date}
@@ -199,4 +199,4 @@ function base62encode(buf) {
 
 - [ ] What scope is needed for admin endpoints?
 - [ ] Is there a GraphQL endpoint at /graphql?
-- [ ] WebSocket at /ws — purpose unknown
+- [ ] WebSocket at /ws -- purpose unknown

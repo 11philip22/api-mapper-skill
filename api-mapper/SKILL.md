@@ -3,10 +3,10 @@ name: api-mapper
 description: >
   Reverse-engineer undocumented APIs using Chrome CDP and curl. Controls a real Chrome browser via
   Node.js scripts to intercept traffic, reverse-engineer JS bundles, and produce markdown docs per
-  domain area in docs/apis/. Output is designed as input for a client or SDK-building agent — complete enough
+  domain area in docs/apis/. Output is designed as input for a client or SDK-building agent -- complete enough
   that no browser is ever needed again. Complex flows (multi-step sequences, computed values, JS-driven behaviour) are fully
   extracted and documented with a runnable Node.js flow script in scripts/flows/. Use this skill
-  whenever the user wants to map, reverse-engineer, document, or explore the API of a website — even
+  whenever the user wants to map, reverse-engineer, document, or explore the API of a website -- even
   phrased as "figure out how X works", "what endpoints does Y use", "sniff the API", "intercept
   requests", "document the backend", or "build an SDK for". Always use for any task involving CDP
   browser automation for API research.
@@ -47,10 +47,10 @@ Produce a complete, reproducible map of the site's API:
 
 ## Tools
 
-**Chrome CDP via Node.js** — launch Chrome and intercept network traffic to observe what the site
+**Chrome CDP via Node.js** -- launch Chrome and intercept network traffic to observe what the site
 actually does. Read `references/cdp-capture.md` before writing any CDP scripts.
 
-Find the Chrome executable before writing any scripts — read the relevant platform reference:
+Find the Chrome executable before writing any scripts -- read the relevant platform reference:
 
 | OS | Reference |
 |----|-----------|
@@ -60,17 +60,17 @@ Find the Chrome executable before writing any scripts — read the relevant plat
 
 Use the CDP protocol directly via raw WebSocket. Install any needed npm packages in the repo root.
 
-**curl** — probe endpoints directly once discovered. Write curl commands as shell scripts
+**curl** -- probe endpoints directly once discovered. Write curl commands as shell scripts
 (.sh on macOS/Linux, .ps1 on Windows) in `artifacts/{timestamp}/probes/`. Never run throwaway
 one-liners.
 
-**JS bundle analysis** — when a flow requires client-side computation, download the relevant
+**JS bundle analysis** -- when a flow requires client-side computation, download the relevant
 bundles and read them. Extract and annotate the logic. See `references/js-flow-analysis.md` for
 the reverse-engineering procedure.
 
 ---
 
-## Walls — stop and ask the user
+## Walls -- stop and ask the user
 
 Pause and ask the user when:
 
@@ -112,7 +112,7 @@ seconds: `artifacts/2025-01-15T14-30-00/`.
 **Node.js for all scripts except probes.** Probe scripts that invoke curl are .sh (macOS/Linux)
 or .ps1 (Windows) and live in `artifacts/{timestamp}/probes/`. Everything else is Node.js.
 
-**Write findings to docs continuously** — don't batch everything to the end. Update `docs/apis/`
+**Write findings to docs continuously** -- don't batch everything to the end. Update `docs/apis/`
 whenever a new area is understood well enough to document.
 
 ---

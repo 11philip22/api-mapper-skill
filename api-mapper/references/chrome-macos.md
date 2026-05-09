@@ -1,4 +1,4 @@
-# Chrome Executable Path — macOS
+# Chrome Executable Path -- macOS
 
 ## Standard install location
 
