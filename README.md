@@ -1,6 +1,6 @@
 # api-mapper
 
-> A Codex skill for mapping undocumented website APIs with Chrome CDP, curl, and JS bundle analysis.
+> An agent skill for mapping undocumented website APIs with Chrome CDP, curl, and JS bundle analysis.
 
 This repository contains the `api-mapper` skill package. The skill guides an agent through
 capturing browser traffic, probing discovered endpoints, reverse-engineering client-side request
@@ -29,12 +29,25 @@ api-mapper/
 - Google Chrome
 - curl or `curl.exe`
 
+## Install
+
+```bash
+# Codex
+npx -y skills add github.com/11philip22/api-mapper-skill -a codex --global --skill api-mapper
+
+# opencode
+npx -y skills add github.com/11philip22/api-mapper-skill -a opencode --global --skill api-mapper
+
+# Claude
+npx -y skills add github.com/11philip22/api-mapper-skill -a claude --global --skill api-mapper
+```
+
 ## Usage
 
-After the skill is installed, invoke it directly:
+After the skill is installed, ask your agent to use it:
 
 ```text
-Use $api-mapper to reverse-engineer and document https://example.com.
+Use the api-mapper skill to reverse-engineer and document https://example.com.
 ```
 
 The agent will open a real Chrome session, capture XHR/Fetch traffic, inspect JS bundles when
