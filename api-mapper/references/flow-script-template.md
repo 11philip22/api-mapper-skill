@@ -30,17 +30,3 @@ message on failure.
 ## The test
 
 `python scripts/flows/{flow}.py` must work from a clean terminal with no browser open.
-
-## Common flow types
-
-**Auth flows** -- typically involve fetching a config or nonce, computing a signature or hash, then
-exchanging credentials for a token. Document every computed field.
-
-**Token refresh** -- usually a single request but may involve re-deriving a signature. Often shares
-extracted constants with the login flow.
-
-**File upload** -- sites frequently chunk files client-side, compute a session ID, and upload each
-chunk with an index and completion flag. The chunk size is usually a hardcoded constant in the bundle.
-
-**File download** -- some sites generate signed URLs or require a pre-request to obtain a download
-token. Document the signing algorithm if present.
