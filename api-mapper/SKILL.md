@@ -121,21 +121,7 @@ Each file must be complete enough to implement the area from scratch without ope
 
 ---
 
-## scripts/flows/{flow}.py
+## s§ripts/flows/{flow}.py
 
 One Python script per documented flow. Read `references/flow-script-template.md` before writing
 any flow script. The script must run with no browser open.
-
----
-
-## Reference Files
-
-| File | Read when |
-|------|-----------|
-| `references/chrome-windows.md` | Finding Chrome on Windows |
-| `references/chrome-macos.md` | Finding Chrome on macOS |
-| `references/chrome-linux.md` | Finding Chrome on Linux |
-| `references/cdp-capture.md` | Writing CDP browser scripts |
-| `references/js-flow-analysis.md` | Reverse-engineering a complex flow |
-| `references/flow-script-template.md` | Writing a flow script |
-| `references/doc-template.md` | Writing API area docs |
