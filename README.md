@@ -50,7 +50,7 @@ references/
   cdp-capture.md                  <- how to write CDP browser scripts
   js-flow-analysis.md             <- how to reverse-engineer a flow
   flow-script-template.md         <- requirements for flow scripts
-  doc-template.md                 <- API doc and README templates
+  api-doc-requirements.md         <- API doc requirements
   chrome-windows.md               <- finding Chrome on Windows
   chrome-macos.md                 <- finding Chrome on macOS
   chrome-linux.md                 <- finding Chrome on Linux

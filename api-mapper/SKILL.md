@@ -114,7 +114,7 @@ whenever a new area is understood well enough to document.
 
 ## docs/apis/{area}.md
 
-One file per domain area (auth, users, search, products, etc.). Read `references/doc-template.md`
+One file per domain area (auth, users, search, products, etc.). Read `references/api-doc-requirements.md`
 before writing any doc file.
 
 Each file must be complete enough to implement the area from scratch without opening a browser.
