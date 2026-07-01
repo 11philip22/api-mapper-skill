@@ -121,7 +121,7 @@ Each file must be complete enough to implement the area from scratch without ope
 
 ---
 
-## s§ripts/flows/{flow}.py
+## scripts/flows/{flow}.py
 
 One Python script per documented flow. Read `references/flow-script-template.md` before writing
 any flow script. The script must run with no browser open.

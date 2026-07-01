@@ -31,16 +31,6 @@ message on failure.
 
 `python scripts/flows/{flow}.py` must work from a clean terminal with no browser open.
 
-## Checklist before committing a flow script
-
-- Runs without a browser
-- Extracted constants cite their bundle source
-- Ported functions are attributed
-- TLS spoofing library is used and documented if required by the target
-- Non-200 responses produce a clear error message
-- Header comment is complete
-- Corresponding `docs/apis/{area}.md` flow section references this script
-
 ## Common flow types
 
 **Auth flows** -- typically involve fetching a config or nonce, computing a signature or hash, then
