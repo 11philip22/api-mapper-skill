@@ -93,8 +93,7 @@ repo/
 ├── artifacts/
 │   └── {timestamp}/ <- one folder per session
 │       ├── requests.ndjson     <- all intercepted XHR/Fetch requests, one JSON per line
-│       ├── bundles/            <- downloaded JS bundles
-│       └── js-analysis/        <- annotated notes from bundle reverse-engineering
+│       └── bundles/            <- downloaded JS bundles
 └── docs/
     └── apis/
         ├── README.md           <- index of all areas and sessions
@@ -104,7 +103,7 @@ repo/
 **Session folders** use an ISO 8601 timestamp with colons and dots replaced by dashes, trimmed to
 seconds: `artifacts/2025-01-15T14-30-00/`.
 
-**Placement:** session output (captured requests, bundles, analysis notes) goes in
+**Placement:** session output (captured requests and bundles) goes in
 `artifacts/{timestamp}/`. Reusable scripts go in `scripts/`. Docs go in `docs/apis/`.
 
 **Write findings to docs continuously** -- don't batch everything to the end. Update `docs/apis/`

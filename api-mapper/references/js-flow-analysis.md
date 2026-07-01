@@ -5,16 +5,15 @@ bundles. The goal is to understand the flow completely enough to reimplement it 
 in any language -- knowing every value sent in every request, where it comes from, and how it is
 derived.
 
-## What the output must capture
+## Output
 
-For each flow analysed, produce two things:
+Document JS-derived flow findings in `docs/apis/{area}.md` using
+`references/api-doc-requirements.md`.
 
-**Annotated analysis** at `artifacts/{timestamp}/js-analysis/{flow}-notes.md` -- a clear
-explanation of what the flow does, what is being computed and why, and what a reimplementer
-needs to know. This should read as useful context, not just raw observations.
+Create the browser-free replay script using `references/flow-script-template.md`.
 
-**Flow script** at `scripts/flows/{flow}.py` -- a standalone Python script that executes the
-full flow without a browser. See `references/flow-script-template.md`.
+Use artifacts only for scratch notes or large intermediate analysis that would clutter the final
+API docs.
 
 ## What to look for in the JS
 
@@ -24,10 +23,3 @@ full flow without a browser. See `references/flow-script-template.md`.
   their location in the bundle noted
 - Custom encoding or crypto functions must be extracted verbatim, not summarised
 - Note the mapping from site JS idioms to standard equivalents (library used, standard algorithm)
-
-## What goes in the API doc
-
-The `docs/apis/{area}.md` flow section must be complete enough that someone who has never
-seen the site JS can implement the flow from scratch. Include the full request sequence, every
-computed field with its algorithm and inputs, all extracted constants with their bundle source,
-and a pointer to the flow script.

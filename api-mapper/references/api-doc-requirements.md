@@ -16,8 +16,9 @@ Include, where applicable:
   encodings, pagination, upload/download details, or non-obvious defaults
 - Discovered but unprobed endpoints, with the evidence source and current blocker
 - For multi-step or JS-derived flows: ordered request sequence, data passed between steps,
-  computed fields with algorithm, inputs, output encoding, language-agnostic pseudocode,
-  extracted constants with bundle source, and the corresponding `scripts/flows/{flow}.py`
+  every computed field with algorithm, inputs, output encoding, language-agnostic pseudocode,
+  source bundle/function, extracted constants with bundle source, standard-library equivalents
+  where applicable, and the corresponding `scripts/flows/{flow}.py`
 
 `docs/apis/README.md` should index the target, documented areas, session artifacts, statuses,
 and open questions.

@@ -32,7 +32,6 @@ repo/
 |   +-- {timestamp}/ <- one folder per research session
 |       +-- requests.ndjson
 |       +-- bundles/
-|       +-- js-analysis/
 +-- docs/
     +-- apis/
         +-- README.md      <- index of all areas and sessions
