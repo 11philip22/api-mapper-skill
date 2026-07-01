@@ -117,13 +117,7 @@ whenever a new area is understood well enough to document.
 One file per domain area (auth, users, search, products, etc.). Read `references/doc-template.md`
 before writing any doc file.
 
-Each file must be complete enough that someone who has never seen the site JS can implement the
-area from scratch.
-
-For any flow that requires more than a plain HTTP call, the doc must include: the full request
-sequence, every computed field (algorithm, inputs, output encoding, language-agnostic pseudocode),
-extracted constants with their bundle source, and a pointer to the corresponding `scripts/flows/`
-script.
+Each file must be complete enough to implement the area from scratch without opening a browser.
 
 ---
 
