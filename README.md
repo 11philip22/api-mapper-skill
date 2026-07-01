@@ -32,7 +32,6 @@ repo/
 |   +-- {timestamp}/ <- one folder per research session
 |       +-- requests.ndjson
 |       +-- bundles/
-|       +-- probes/
 |       +-- js-analysis/
 +-- docs/
     +-- apis/
@@ -49,7 +48,6 @@ Session folders are named using an ISO 8601 timestamp with colons and dots repla
 SKILL.md                          <- main skill instructions
 references/
   cdp-capture.md                  <- how to write CDP browser scripts
-  curl-probe-patterns.md          <- probe script guidelines
   js-flow-analysis.md             <- how to reverse-engineer a flow
   flow-script-template.md         <- requirements for flow scripts
   doc-template.md                 <- API doc and README templates

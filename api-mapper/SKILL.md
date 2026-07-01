@@ -60,9 +60,8 @@ Find the Chrome executable before writing any scripts -- read the relevant platf
 
 Use the CDP protocol directly via raw WebSocket. Install any needed Python packages in the repo root.
 
-**curl** -- probe endpoints directly once discovered. Write curl commands as shell scripts
-(.sh on macOS/Linux, .ps1 on Windows) in `artifacts/{timestamp}/probes/`. Never run throwaway
-one-liners.
+**curl** -- probe endpoints directly once discovered. Run `curl` or `curl.exe` commands as
+needed; document useful results in `docs/apis/`.
 
 **JS bundle analysis** -- when a flow requires client-side computation, download the relevant
 bundles and read them. Extract and annotate the logic. See `references/js-flow-analysis.md` for
@@ -95,7 +94,6 @@ repo/
 │   └── {timestamp}/ <- one folder per session
 │       ├── requests.ndjson     <- all intercepted XHR/Fetch requests, one JSON per line
 │       ├── bundles/            <- downloaded JS bundles
-│       ├── probes/             <- curl probe scripts (.sh or .ps1)
 │       └── js-analysis/        <- annotated notes from bundle reverse-engineering
 └── docs/
     └── apis/
@@ -106,11 +104,8 @@ repo/
 **Session folders** use an ISO 8601 timestamp with colons and dots replaced by dashes, trimmed to
 seconds: `artifacts/2025-01-15T14-30-00/`.
 
-**Placement:** session output (captured requests, bundles, probes, analysis notes) goes in
+**Placement:** session output (captured requests, bundles, analysis notes) goes in
 `artifacts/{timestamp}/`. Reusable scripts go in `scripts/`. Docs go in `docs/apis/`.
-
-**Python for all scripts except probes.** Probe scripts that invoke curl are .sh (macOS/Linux)
-or .ps1 (Windows) and live in `artifacts/{timestamp}/probes/`. Everything else is Python.
 
 **Write findings to docs continuously** -- don't batch everything to the end. Update `docs/apis/`
 whenever a new area is understood well enough to document.
@@ -147,7 +142,6 @@ any flow script. The script must run with no browser open.
 | `references/chrome-macos.md` | Finding Chrome on macOS |
 | `references/chrome-linux.md` | Finding Chrome on Linux |
 | `references/cdp-capture.md` | Writing CDP browser scripts |
-| `references/curl-probe-patterns.md` | Writing probe scripts |
 | `references/js-flow-analysis.md` | Reverse-engineering a complex flow |
 | `references/flow-script-template.md` | Writing a flow script |
 | `references/doc-template.md` | Writing API area docs |
