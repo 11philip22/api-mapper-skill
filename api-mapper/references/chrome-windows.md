@@ -1,16 +1,4 @@
-# Chrome Executable Path -- Windows
-
-## Common install locations (try in order)
-
-```
-C:\Program Files\Google\Chrome\Application\chrome.exe
-C:\Program Files (x86)\Google\Chrome\Application\chrome.exe
-%LOCALAPPDATA%\Google\Chrome\Application\chrome.exe
-```
-
-`%LOCALAPPDATA%` expands to `C:\Users\{username}\AppData\Local\`.
-
-## Auto-detect via PowerShell
+# Chrome Detection -- Windows
 
 ```powershell
 $paths = @(

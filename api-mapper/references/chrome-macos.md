@@ -1,12 +1,4 @@
-# Chrome Executable Path -- macOS
-
-## Standard install location
-
-```
-/Applications/Google Chrome.app/Contents/MacOS/Google Chrome
-```
-
-## Auto-detect via shell
+# Chrome Detection -- macOS
 
 ```bash
 CHROME=$(ls "/Applications/Google Chrome.app/Contents/MacOS/Google Chrome" 2>/dev/null \
