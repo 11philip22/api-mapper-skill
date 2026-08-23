@@ -1,0 +1,7 @@
+interface:
+  display_name: "APK API Mapper"
+  short_description: "Map APIs from Android APKs"
+  default_prompt: "Use $apk-api-mapper to reverse-engineer and document the APIs used by this Android APK."
+
+policy:
+  allow_implicit_invocation: true
